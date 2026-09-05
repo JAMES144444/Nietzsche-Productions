@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B0B0C'/%3E%3Cpath d='M50 20 L65 50 L50 80 L35 [...]">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+[...]" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+[..." rel="stylesheet">
 <style>
   :root{
     --void:#0B0B0C;
@@ -279,9 +279,34 @@
   footer{ border-top:1px solid var(--line); padding:44px 0; }
   .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
   .footer-inner .logo{ font-size:16px; }
-  .footer-links{ display:flex; gap:26px; list-style:none; margin:0; padding:0; font-family:'IBM Plex Mono', monospace; font-size:12.5px; }
+  .footer-links{ display:flex; gap:16px; list-style:none; margin:0; padding:0; font-family:'IBM Plex Mono', monospace; font-size:12.5px; }
   .footer-links a{ color:var(--ash); text-decoration:none; }
   .footer-links a:hover{ color:var(--bone); }
+
+  /* Styled GitHub Pages project links */
+  .footer-links .gh-link {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 12px;
+    border-radius:10px;
+    border:1px solid transparent;
+    color:var(--ash);
+    background:transparent;
+    transition:background 0.18s ease, color 0.18s ease, transform 0.12s ease, border-color 0.18s ease;
+    font-family:'Fraunces', serif;
+    font-weight:450;
+    font-size:13px;
+  }
+  .footer-links .gh-link svg{ width:16px; height:16px; flex:none; opacity:0.95; }
+  .footer-links .gh-link:hover{
+    background:rgba(217,180,92,0.08);
+    border-color:rgba(217,180,92,0.12);
+    color:var(--bone);
+    transform:translateY(-2px);
+  }
+  .footer-links .gh-link .label{ display:inline-block; line-height:1; }
+
   .footer-fine{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ash); }
 
   @media (max-width: 900px){
@@ -293,10 +318,13 @@
     .thesis-row{ grid-template-columns:56px 1fr; }
     .thesis-row > p{ grid-column:1 / -1; }
     section{ padding:90px 0; }
+    .footer-inner{ gap:12px; }
+    .footer-links{ flex-wrap:wrap; gap:10px; }
   }
   @media (max-width: 560px){
     .wrap{ padding:0 22px; }
     .hero{ padding-top:120px; }
+    .footer-links .gh-link{ padding:10px 14px; border-radius:8px; }
   }
 </style>
 </head>
@@ -543,9 +571,36 @@
       <li><a href="#process">How it thinks</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#early-access">Get access</a></li>
-      <li><a href="https://nietzscheproductions.github.io/Nietzsche-AI/" target="_blank" rel="noopener">Nietzsche-AI</a></li>
-      <li><a href="https://nietzscheproductions.github.io/Nietzsche-Craft/" target="_blank" rel="noopener">Nietzsche-Craft</a></li>
-      <li><a href="https://nietzscheproductions.github.io/Nietzsche-OS/" target="_blank" rel="noopener">Nietzsche-OS</a></li>
+      <li>
+        <a class="gh-link" href="https://nietzscheproductions.github.io/Nietzsche-AI/" target="_blank" rel="noopener" aria-label="Nietzsche AI GitHub Pages">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 3h7v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 14L21 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 21H3V3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="label">Nietzsche AI</span>
+        </a>
+      </li>
+      <li>
+        <a class="gh-link" href="https://nietzscheproductions.github.io/Nietzsche-Craft/" target="_blank" rel="noopener" aria-label="Nietzsche Craft GitHub Pages">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 3h7v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 14L21 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 21H3V3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="label">Nietzsche Craft</span>
+        </a>
+      </li>
+      <li>
+        <a class="gh-link" href="https://nietzscheproductions.github.io/Nietzsche-OS/" target="_blank" rel="noopener" aria-label="Nietzsche OS GitHub Pages">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 3h7v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 14L21 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 21H3V3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="label">Nietzsche OS</span>
+        </a>
+      </li>
     </ul>
     <div class="footer-fine">© 2026 Nietzsche Productions. This too shall recur.</div>
   </div>
